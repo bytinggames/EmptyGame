@@ -29,17 +29,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Stuff\InputRecorderManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Stuff\Save.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\Button.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Updraws\Updraw.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Updraws\UpdrawStored.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Updraws\U_Anim.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Updraws\U_Draw.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Updraws\U_Multiple.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Updraws\U_None.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Updraws\U_OutputOnUpdate.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Updraws\U_Update.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Updraws\U_Variable.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Updraws\U_Wait.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Updraws\U_WaitUntil.cs" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
