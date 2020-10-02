@@ -263,7 +263,7 @@ namespace EmptyGame
                     OnReloadTextures(gDevice);
                 }
 
-                if (Directory.Exists(modPath + "\\sounds\\"))
+                if (Directory.Exists(soundPath))
                 {
                     //ContentLoader.sounds.Clear();
                     //files = Directory.GetFiles(modPath + "\\sounds\\", "*.wav", SearchOption.AllDirectories);
