@@ -57,6 +57,22 @@ namespace EmptyGame
 
         public static double updatesPerFrame = 1;
 
+        bool updateGame = true;
+        bool isApplicationActive;
+
+        public static FPS updateFps = new FPS(), frameFps = new FPS();
+
+        bool firstDraw = true;
+
+        public static int updateFrame, drawFrame;
+
+
+        public static bool restart = false;
+
+        public static bool exit = false;
+        int inited = -2;
+
+
         public Game1()
             : base(true)
         {
@@ -84,9 +100,7 @@ namespace EmptyGame
             base.Initialize();
         }
 
-        int inited = -2;
-
-        void InitializeLater()
+        private void InitializeLater()
         {
             Window.AllowUserResizing = true;
             Window.ClientSizeChanged += new System.EventHandler<System.EventArgs>(Window_ClientSizeChanged);
@@ -158,12 +172,6 @@ namespace EmptyGame
             inputRecorderManager?.Stop();
         }
 
-        bool updateGame = true;
-        bool isApplicationActive;
-        
-        public static bool restart = false;
-
-        public static bool exit = false;
         protected override void Update(GameTime gameTime)
         {
             updateFps.NewFrame();
@@ -385,12 +393,6 @@ namespace EmptyGame
             base.Update(gameTime);
         }
 
-        public static FPS updateFps = new FPS(), frameFps = new FPS();
-
-        bool firstDraw = true;
-
-        public static int updateFrame;
-
         protected override void Draw(GameTime gameTime)
         {
             if (firstDraw)
@@ -436,10 +438,10 @@ namespace EmptyGame
                     frameFps.NewFrame();
 
 #if DEBUG
-                    //if (frameFps.CurrentFPS < 50)
-                    //    Font.small.Draw("fps: " + frameFps.CurrentFPS, Anchor.TopLeft(0, 0));
-                    //if (updateFps.CurrentFPS < 50)
-                    //    Font.small.Draw("ups: " + updateFps.CurrentFPS, Anchor.TopLeft(0, 32));
+                    if (frameFps.CurrentFPS < 50)
+                        Font.small.Draw("fps: " + frameFps.CurrentFPS, Anchor.TopLeft(0, 0));
+                    if (updateFps.CurrentFPS < 50)
+                        Font.small.Draw("ups: " + updateFps.CurrentFPS, Anchor.TopLeft(0, 32));
 #endif
 
                     spriteBatch.End();
@@ -455,6 +457,8 @@ namespace EmptyGame
                 }
 
             }
+            drawFrame++;
+
             base.Draw(gameTime);
         }
 
@@ -492,7 +496,7 @@ namespace EmptyGame
             return (graphics.PreferredBackBufferSize() / 2f - renderTarget.GetSize() / 2f * scale).RoundVector();
         }
 
-        private float CalculateRenderTargetScaling()
+        public static float CalculateRenderTargetScaling()
         {
             //Window
             float scale = Math.Min((float)graphics.PreferredBackBufferWidth / renderTarget.Width, (float)graphics.PreferredBackBufferHeight / renderTarget.Height);

@@ -9,13 +9,12 @@
     <Import_RootNamespace>EmptyGame</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Cloning.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)GameIdentity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stuff\GameIdentity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)G.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Main\Game1.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Main\Ingame.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Program.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Ingame.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Main\Program.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stuff\AssemblyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Colors.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Depth.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Font.cs" />
@@ -25,7 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Helpers\RunningContent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Sounds.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Tex.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Rules.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Curves.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Stuff\InputRecorderManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Stuff\Save.cs" />

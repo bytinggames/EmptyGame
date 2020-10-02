@@ -62,7 +62,7 @@ namespace EmptyGame
             Depth.cursor.Set(() =>
             {
                 Tex.Placeholder.book_of_no_limits.Draw(Vector2.Zero);
-                Tex.Placeholder.cursor.Draw(camera.mousePos.FloorVector() + new Vector2(-16));
+                Tex.Placeholder.cursor.Draw(camera.mousePos.FloorVector() + new Vector2(-16), null, null, null, Curves.Sin(Game1.updateFrame * 0.01f));
             });
 
             Depth.one.Set(() =>
@@ -79,22 +79,33 @@ namespace EmptyGame
 
         private void DrawOnScreen()
         {
-            string normal = "[Esc] Exit\n[F11] Toggle Fullscreen\n[R] Restart\n[Tab] Toggle Extended\n";
+            string normal = @"[Esc] Exit
+[F11] Toggle Fullscreen
+[R] Restart
+[Mouse Wheel] Move Camera + Zoom
+[Tab] Toggle Extended
+";
 
             if (extended)
                 normal += @"[F12] Take Screenshot
-[Ctrl+C] Copy Screenshot to Clipboard
+[Ctrl + C] Copy Screenshot to Clipboard
 [Left | Right] Swap Screen
-[Ctrl+F5] Play replay
+[Ctrl + F5] Play replay
 [Up] double update speed
 [Down] halve update speed
-<Left Shift> 10x update speed
-<Left Shift + Left Control> 100x update speed
+<Shift> 10x update speed
+<Shift + Control> 100x update speed
 <Right Control> pause game
-<Left Alt> 0.2 update speed
-<Left Alt + Left Control> 0.04 update speed";
+<Alt> 0.2 update speed
+<Alt + Control> 0.04 update speed";
 
-            Font.big.Draw(normal, new Vector2(16), Color.Black, new Vector2(2f));
+            Font.small.Draw(normal, new Vector2(16), Color.Black, new Vector2(2f));
+
+
+            if (Game1.updatesPerFrame != 1)
+            {
+                Font.big.Draw(Game1.updatesPerFrame + "x", Anchor.BottomLeft(8, G.resV.Y - 8), Color.White);
+            }
         }
 
         public void Dispose()

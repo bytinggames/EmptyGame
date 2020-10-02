@@ -141,12 +141,12 @@ namespace EmptyGame
         {
             Save.SaveTo(writer);
             
-            bool settingsExists = File.Exists(Paths.settings);
+            bool settingsExists = File.Exists(Paths.settings_txt);
             writer.Write(settingsExists);
 
             if (settingsExists)
             {
-                using (FileStream fs = File.OpenRead(Paths.settings))
+                using (FileStream fs = File.OpenRead(Paths.settings_txt))
                 {
                     writer.Write((long)fs.Length);
                     

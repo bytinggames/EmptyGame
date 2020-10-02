@@ -21,7 +21,7 @@ namespace EmptyGame
 
         static Rules()
         {
-            string settingsPath = Paths.settings;
+            string settingsPath = Paths.settings_txt;
 
             if (File.Exists(settingsPath))
             {
@@ -66,41 +66,6 @@ namespace EmptyGame
                         throw new Exception();
                 }
             }
-        }
-
-        internal static bool WPressed()
-        {
-#if DEBUG
-            return Input.w.pressed;
-#else
-            return false;
-#endif
-        }
-        internal static bool KPressed()
-        {
-#if DEBUG
-            return Input.k.pressed;
-#else
-            return false;
-#endif
-        }
-
-        internal static bool EnterPressed()
-        {
-#if DEBUG
-            return Input.enter.pressed;
-#else
-            return false;
-#endif
-        }
-
-        internal static bool LeftShiftDown()
-        {
-#if DEBUG
-            return Input.leftShift.down;
-#else
-            return false;
-#endif
         }
     }
 }
