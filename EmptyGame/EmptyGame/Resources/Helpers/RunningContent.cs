@@ -36,9 +36,9 @@ namespace EmptyGame
             {
                 path = JuliHelper.G.exeDir;
             }
-            modPath = Path.Combine(path, "EmptyGame\\Content");
-            texturePath = Path.Combine(modPath, "textures");
-            soundPath = Path.Combine(modPath, "sounds");
+            modPath = Path.Combine(path, GameIdentity.ProjectName, "Content");
+            texturePath = Path.Combine(modPath, "Textures");
+            soundPath = Path.Combine(modPath, "Sounds");
         }
 
         public static void LoadAll(GraphicsDevice gDevice)
@@ -218,9 +218,13 @@ namespace EmptyGame
 
         private static void OnReloadSounds()
         {
-
-            Sounds.Initialize();
-
+            string soundSettingsPath;
+#if DEBUG
+            soundSettingsPath = Path.Combine(RunningContent.soundPath, "settings.txt");
+#else
+            soundSettingsPath = Path.Combine(Paths.exeDir, "Content", "Sounds", "settings.txt");
+#endif
+            Sounds.Initialize(soundSettingsPath);
         }
 
         private static void AddOrReplace(string key, Texture2D tex)

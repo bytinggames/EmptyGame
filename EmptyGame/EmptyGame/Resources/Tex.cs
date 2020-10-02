@@ -15,8 +15,12 @@ namespace EmptyGame
 
         public static void Initialize(GraphicsDevice gDevice, ContentManager content)
         {
+#if DEBUG
             string contentPath = Path.Combine(Calculate.GetParentPath(Environment.CurrentDirectory, 5), GameIdentity.ProjectName, "Content");
-            ContentFenja.Load(typeof(Tex), contentPath, "Textures", gDevice, content);
+            ContentFenja.LoadRaw(typeof(Tex), contentPath, "Textures", gDevice);
+#else
+            ContentFenja.LoadProcessed(typeof(Tex), "Textures", content);
+#endif
         }
     }
 }

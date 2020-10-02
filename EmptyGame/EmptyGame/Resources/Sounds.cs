@@ -11,7 +11,8 @@ namespace EmptyGame
 {
     public static class Sounds
     {
-        public static SoundItem knock;
+        public static SoundItem knock, knock2, knock3;
+
         public static SoundItem clickButton => knock;
 
         public abstract class SoundItem
@@ -94,7 +95,7 @@ namespace EmptyGame
             }
         }
 
-        public static void Initialize()
+        public static void Initialize(string soundSettingsPath)
         {
             soundDictionary = new Dictionary<string, SoundItem>();
             string[] sounds = ContentLoader.sounds.Keys.ToArray();
@@ -185,7 +186,6 @@ namespace EmptyGame
                 }
             }
 
-            string soundSettingsPath = Path.Combine(RunningContent.modPath, "sounds", "settings.txt");
             if (File.Exists(soundSettingsPath))
             {
                 string[] lines = File.ReadAllLines(soundSettingsPath);

@@ -36,6 +36,13 @@ namespace EmptyGame
             if (Input.tab.pressed)
                 extended = !extended;
 
+            if (Input.d1.pressed)
+                Sounds.knock.Play();
+            if (Input.d2.pressed)
+                Sounds.knock2.Play();
+            if (Input.d3.pressed)
+                Sounds.knock3.Play();
+
             camera.UpdateEnd(G.res.X, G.res.Y);
         }
 
