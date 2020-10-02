@@ -505,6 +505,11 @@ namespace EmptyGame
             }
             else if (scale < 1)
             {
+                //if (scale > 0.75f)
+                //    scale = 0.75f;
+                //else if (scale > 2f /3f)
+                //    scale = 2f / 3f;
+                //else
                 if (scale > 0.5)
                     scale = 0.5f;
             }
