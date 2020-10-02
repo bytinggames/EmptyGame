@@ -1,0 +1,30 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:Windows
+/config:
+/profile:Reach
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+
+#begin Fonts/lato_28.xnb
+/copy:Fonts/lato_28.xnb
+
+#begin Fonts/lato-thin-mod_10.xnb
+/copy:Fonts/lato-thin-mod_10.xnb
+
+#begin Fonts/lato-thin-mod_14_b.xnb
+/copy:Fonts/lato-thin-mod_14_b.xnb
+
+#begin Fonts/lato-thin-mod_14_b_space.xnb
+/copy:Fonts/lato-thin-mod_14_b_space.xnb
+
+#begin Sounds/settings.txt
+/copy:Sounds/settings.txt
+

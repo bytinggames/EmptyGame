@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EmptyGame", "EmptyGame\EmptyGame.shproj", "{A0CDBD0E-3A41-42B7-9425-A838BC2C7383}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "JuliHelperShared", "..\..\..\JuliHelper\JuliHelperShared\JuliHelperShared\JuliHelperShared.shproj", "{7061EA84-D712-49CE-AEC3-C2CAAEB99B92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmptyGame.DX", "EmptyGame.DX\EmptyGame.DX.csproj", "{9DC62BA5-D4EB-4A28-8825-42D3AC96F11E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmptyGame.GL", "EmptyGame.GL\EmptyGame.GL.csproj", "{73875341-2575-46E3-A337-9243C5EFE53A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Framework.DesktopGL", "..\..\..\MonoGame.BytingGames\MonoGame\MonoGame.Framework\MonoGame.Framework.DesktopGL.csproj", "{B718E991-32D8-4565-A097-6D599E0236DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Framework.WindowsDX", "..\..\..\MonoGame.BytingGames\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsDX.csproj", "{0869827A-05EB-4F89-B5EB-7A689C7994BB}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\..\JuliHelper\JuliHelperShared\JuliHelperShared\JuliHelperShared.projitems*{7061ea84-d712-49ce-aec3-c2caaeb99b92}*SharedItemsImports = 13
+		EmptyGame\EmptyGame.projitems*{73875341-2575-46e3-a337-9243c5efe53a}*SharedItemsImports = 4
+		..\..\..\JuliHelper\JuliHelperShared\JuliHelperShared\JuliHelperShared.projitems*{73875341-2575-46e3-a337-9243c5efe53a}*SharedItemsImports = 4
+		EmptyGame\EmptyGame.projitems*{9dc62ba5-d4eb-4a28-8825-42d3ac96f11e}*SharedItemsImports = 4
+		..\..\..\JuliHelper\JuliHelperShared\JuliHelperShared\JuliHelperShared.projitems*{9dc62ba5-d4eb-4a28-8825-42d3ac96f11e}*SharedItemsImports = 4
+		EmptyGame\EmptyGame.projitems*{a0cdbd0e-3a41-42b7-9425-a838bc2c7383}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73875341-2575-46E3-A337-9243C5EFE53A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73875341-2575-46E3-A337-9243C5EFE53A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73875341-2575-46E3-A337-9243C5EFE53A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{73875341-2575-46E3-A337-9243C5EFE53A}.Debug|x86.Build.0 = Debug|Any CPU
+		{73875341-2575-46E3-A337-9243C5EFE53A}.Release|Any CPU.ActiveCfg = Release|x64
+		{73875341-2575-46E3-A337-9243C5EFE53A}.Release|Any CPU.Build.0 = Release|x64
+		{73875341-2575-46E3-A337-9243C5EFE53A}.Release|x86.ActiveCfg = Release|Any CPU
+		{73875341-2575-46E3-A337-9243C5EFE53A}.Release|x86.Build.0 = Release|Any CPU
+		{B718E991-32D8-4565-A097-6D599E0236DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B718E991-32D8-4565-A097-6D599E0236DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B718E991-32D8-4565-A097-6D599E0236DE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B718E991-32D8-4565-A097-6D599E0236DE}.Debug|x86.Build.0 = Debug|Any CPU
+		{B718E991-32D8-4565-A097-6D599E0236DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B718E991-32D8-4565-A097-6D599E0236DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B718E991-32D8-4565-A097-6D599E0236DE}.Release|x86.ActiveCfg = Release|Any CPU
+		{B718E991-32D8-4565-A097-6D599E0236DE}.Release|x86.Build.0 = Release|Any CPU
+		{0869827A-05EB-4F89-B5EB-7A689C7994BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0869827A-05EB-4F89-B5EB-7A689C7994BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0869827A-05EB-4F89-B5EB-7A689C7994BB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0869827A-05EB-4F89-B5EB-7A689C7994BB}.Debug|x86.Build.0 = Debug|Any CPU
+		{0869827A-05EB-4F89-B5EB-7A689C7994BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0869827A-05EB-4F89-B5EB-7A689C7994BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0869827A-05EB-4F89-B5EB-7A689C7994BB}.Release|x86.ActiveCfg = Release|Any CPU
+		{0869827A-05EB-4F89-B5EB-7A689C7994BB}.Release|x86.Build.0 = Release|Any CPU
+		{9DC62BA5-D4EB-4A28-8825-42D3AC96F11E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9DC62BA5-D4EB-4A28-8825-42D3AC96F11E}.Debug|Any CPU.Build.0 = Debug|x86
+		{9DC62BA5-D4EB-4A28-8825-42D3AC96F11E}.Debug|x86.ActiveCfg = Debug|x86
+		{9DC62BA5-D4EB-4A28-8825-42D3AC96F11E}.Debug|x86.Build.0 = Debug|x86
+		{9DC62BA5-D4EB-4A28-8825-42D3AC96F11E}.Release|Any CPU.ActiveCfg = Release|x86
+		{9DC62BA5-D4EB-4A28-8825-42D3AC96F11E}.Release|x86.ActiveCfg = Release|x86
+		{9DC62BA5-D4EB-4A28-8825-42D3AC96F11E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8D3A6CC-E9C8-4731-82BF-DF91F180BACF}
+	EndGlobalSection
+EndGlobal
