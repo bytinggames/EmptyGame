@@ -477,7 +477,7 @@ namespace EmptyGame
 #if WINDOWS
             using (MemoryStream ms = new MemoryStream())
             {
-                renderTarget.Save(ms, renderTarget.Width, renderTarget.Height);
+                renderTarget.SaveAsPng(ms, renderTarget.Width, renderTarget.Height);
 
                 using (System.Drawing.Image img = System.Drawing.Image.FromStream(ms))
                 {
