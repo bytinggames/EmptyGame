@@ -36,6 +36,13 @@ namespace EmptyGame
                 PlayChild(volume, pitch, pan);
             }
 
+            public void Reset()
+            {
+                volume = 0.5f;
+                pitch = 0f;
+                pan = 0f;
+            }
+
             public abstract void PlayChild(float volume, float pitch, float pan);
         }
         public class Sound : SoundItem
@@ -95,7 +102,7 @@ namespace EmptyGame
             }
         }
 
-        public static void Initialize(string soundSettingsPath)
+        public static void Initialize()
         {
             soundDictionary = new Dictionary<string, SoundItem>();
             string[] sounds = ContentLoader.sounds.Keys.ToArray();
@@ -186,9 +193,22 @@ namespace EmptyGame
                 }
             }
 
-            if (File.Exists(soundSettingsPath))
+            ReloadSettings();
+
+            RestartFrames();
+        }
+
+        public static void ReloadSettings()
+        {
+            if (File.Exists(RunningContent.soundSettingsPath))
             {
-                string[] lines = File.ReadAllLines(soundSettingsPath);
+                string[] keys = soundDictionary.Keys.ToArray();
+                for (int i = 0; i < keys.Length; i++)
+                {
+                    soundDictionary[keys[i]].Reset();
+                }
+
+                string[] lines = File.ReadAllLines(RunningContent.soundSettingsPath);
                 for (int i = 0; i < lines.Length; i++)
                 {
                     if (lines[i].StartsWith("//"))
@@ -221,9 +241,6 @@ namespace EmptyGame
                     }
                 }
             }
-
-
-            RestartFrames();
         }
         
         public static void PlayMe(this SoundEffect sound, float _volume, float _pitch, float _pan)

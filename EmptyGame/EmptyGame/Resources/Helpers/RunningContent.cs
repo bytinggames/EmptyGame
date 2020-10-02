@@ -13,7 +13,7 @@ namespace EmptyGame
 {
     class RunningContent
     {
-        public static string modPath, texturePath, soundPath;
+        public static string modPath, texturePath, soundPath, soundSettingsPath;
 
         private static DateTime lastLoaded;
 
@@ -39,6 +39,12 @@ namespace EmptyGame
             modPath = Path.Combine(path, GameIdentity.ProjectName, "Content");
             texturePath = Path.Combine(modPath, "Textures");
             soundPath = Path.Combine(modPath, "Sounds");
+
+#if DEBUG
+            soundSettingsPath = Path.Combine(soundPath, "settings.txt");
+#else
+            soundSettingsPath = Path.Combine(Paths.exeDir, "Content", "Sounds", "settings.txt");
+#endif
         }
 
         public static void LoadAll(GraphicsDevice gDevice)
@@ -218,13 +224,7 @@ namespace EmptyGame
 
         private static void OnReloadSounds()
         {
-            string soundSettingsPath;
-#if DEBUG
-            soundSettingsPath = Path.Combine(RunningContent.soundPath, "settings.txt");
-#else
-            soundSettingsPath = Path.Combine(Paths.exeDir, "Content", "Sounds", "settings.txt");
-#endif
-            Sounds.Initialize(soundSettingsPath);
+            Sounds.Initialize();
         }
 
         private static void AddOrReplace(string key, Texture2D tex)
@@ -271,17 +271,19 @@ namespace EmptyGame
                     //{
                     //    //try
                     //    //{
-                    //        string name = file.Substring(file.LastIndexOf('\\') + 1);
-                    //        name = name.Remove(name.Length - 4);
-                    //        //if (ContentLoader.sounds.ContainsKey(name))
-                    //        {
-                    //            using (FileStream stream = new FileStream(file, FileMode.Open))
-                    //                ContentLoader.sounds.Add(name, SoundEffect.FromStream(stream));
-                    //        }
+                    //    string name = file.Substring(file.LastIndexOf('\\') + 1);
+                    //    name = name.Remove(name.Length - 4);
+                    //    //if (ContentLoader.sounds.ContainsKey(name))
+                    //    {
+                    //        using (FileStream stream = new FileStream(file, FileMode.Open))
+                    //            ContentLoader.sounds.Add(name, SoundEffect.FromStream(stream));
+                    //    }
                     //    //} catch (Exception e) { Program.LogError(e); }
                     //}
 
                     //OnReloadSounds();
+
+                    Sounds.ReloadSettings();
                 }
             }
             sw.Stop();

@@ -1,2 +1,2 @@
-knock2 p0.9
+knock2 p0.8
 knock3 p-0.5 v0.1
